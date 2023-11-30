@@ -5,7 +5,8 @@ function useFilter() {
   const { filter, setFilter } = useContext(FiltersContext);
 
   const filterNews = (news) => {
-    return news.filter((item) => item.deporte === filter);
+    return news.filter((sport) => sport.deporte === filter)
+    .sort((a,b) =>  b.fecha > a.fecha)
   };
 
   return { filter, filterNews, setFilter };
